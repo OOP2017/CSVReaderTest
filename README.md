@@ -29,6 +29,7 @@ If you want to do this, you have to tell the IDE to use 2 source dirs.
 * First, add the test code to a folder named `test`. The test folder should have the same directory structure as your main `src` folder. (See below)
 * In Eclipse, open the dialog for Project -> Properties and choose "Java Build Path".  Select the "Source" tab.  Click "Add Folder..." and add the test folder.  Exit the dialog.
 * Now, Eclipse will compile and run files in both the `src` and `test` folders.
+* Other IDE are similar: open the project configuration dialog and specify that it should use `test` as a source folder.
 
 ### Add these Tests to your Project
 
@@ -44,7 +45,7 @@ ku/util/
 ku/util/BigCSVReaderTest.java
 ku/util/EasyCSVReaderTest.java
 ```
-If the test code is in a `test/` source tree, then you'll have:
+**If** the test code is in a separate `test/` directory, then you'll have:
 ```
 test/README.md
 test/ku/util/
@@ -72,10 +73,8 @@ Git submodules let you add a Git repository inside another Git repository, but k
    > git submodule update
    ```
 
-### Running the Tests
+### Two Ways to Run the Tests
 
-Two ways: 
+* Run as JUnit tests in your IDE.  Usually you right-click on the test file and choose "Run JUnit test".
 
-* Run as JUnit tests in your IDE.  Usually you right-click on the test file to run and choose "Run JUnit test".
-
-* Run `TestRunner` as ordinary Java appliation. This will run both test suites.
+* Run `TestRunner` as an ordinary Java application. This will run both test classes.
