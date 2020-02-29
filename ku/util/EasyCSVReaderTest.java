@@ -20,8 +20,8 @@ public class EasyCSVReaderTest {
 
     // Temporary file for CSV test data.  This file is rewritten for each test.
     // The file is created automatically.
-    // Set it to whatever is appropriate for your system. 
-    // You can include a path, but the path nad file must be writable.
+    // Set it to whatever is appropriate for your computer.. 
+    // You can include a path, but the path and file must be writable.
 	private final String tempfilename = "testdata.csv";
 	private File file;
 	private InputStream instream;

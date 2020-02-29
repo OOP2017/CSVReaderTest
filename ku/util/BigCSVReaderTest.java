@@ -31,7 +31,7 @@ import ku.util.CSVReader;
  */
 public class BigCSVReaderTest {
 	// A temporary file used to write data for tests.
-	// Set this to whatever is appropriate for your system.
+	// Set this to whatever is appropriate for your computer.
 	private final String tempfilename = "testdata.csv";
 	private File file;
 	private InputStream instream;
@@ -237,7 +237,7 @@ public class BigCSVReaderTest {
 		CSVReader csv = new CSVReader(getInstream());
 		assertTrue( csv.hasNext() );
 		String [] next = csv.next();
-		assertEquals( r1.length, next.length );
+		assertArrayEquals( r1, next );
 		csv.next();
 		fail("next should throw NoSuchElementException if no more data");
 	}
@@ -286,7 +286,8 @@ public class BigCSVReaderTest {
 	
 	
 	/** Test Constructor accepts URL. */
-	@Test(timeout=100)
+	//Not tested -- removed from CSVReader spec in 2020.
+	// @Test(timeout=100)  
 	public void testConstructorWithURL() throws Exception {
 		String [] r1 = {"NAME", "ADDRESS","EMAIL"};
 		// should not remove space inside of quotes
@@ -306,7 +307,7 @@ public class BigCSVReaderTest {
 	/** Constructor accepts name of file. */
 	@Test(timeout=100, expected=java.io.FileNotFoundException.class)
 	public void testConstructorThrowsRuntimeException() throws Exception {
-		String filename = "ANonExistentFile.hahaha";
+		String filename = "A-Non-existent-File.hahaha";
 		CSVReader csv = new CSVReader(filename);
 		fail( "Should throw FileNotFoundException for non-existent file "+filename );
 	}
