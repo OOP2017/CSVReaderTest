@@ -37,22 +37,23 @@ If you want to do this, you have to tell the IDE to use 2 source dirs.
 
 #### 1. Just add the files to project (the simple way)
 
-Just copy the files to your project source directory (or `test/` source directory). 
+Just copy the java files to your project source directory (or `test/` source directory). 
 You should have files like this, relative to your project source root: 
 ```
-README.md
 ku/util/
 ku/util/BigCSVReaderTest.java
 ku/util/EasyCSVReaderTest.java
+ku/util/TestRunner.java
 ```
 **If** the test code is in a separate `test/` directory, then you'll have:
 ```
-test/README.md
 test/ku/util/
 test/ku/util/BigCSVReaderTest.java
+test/ku/util/EasyCSVReaderTest.java
+test/ku/util/TestRunner.java
 ```
 
-#### 2. Using git submodule (the advanced way)
+#### 2. Using git submodule (requires separate src/ and test/ dirs)
 
 The Git repository for CSVReaderTest is structured as a Git submodule.
 Git submodules let you add a Git repository inside another Git repository, but keep the two sets of files separate.  Here are the steps:
